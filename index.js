@@ -4,10 +4,10 @@ const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
-const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const nums = '0123456789';
-
+// const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+// const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+// const nums = '0123456789';
+const nums ='01'
 const alphabet = katakana + latin + nums;
 
 const fontSize = 16;
