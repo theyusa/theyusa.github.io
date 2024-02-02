@@ -1,13 +1,125 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="tr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <title>Matrix digital rain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <script src="https://unpkg.com/figlet/lib/figlet.js"></script> <!-- Figlet kütüphanesi -->
+    <link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" />
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #2d2d2d;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .terminal {
+            width: 50%;
+            height: 40%;
+            background-color: #000;
+            border-radius: 5px;
+            overflow: hidden auto;
+            padding: 10px;
+        }
+
+        .terminal::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) and (max-height: 1024px) {
+            .terminal {
+                width: 90%;
+                height: 60%;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
-    <canvas id="Matrix"></canvas>
-    <script src="./index.js"></script>
+
+
+    <div class="terminal"></div>
+    <script>
+        figlet.defaults({ fontPath: 'https://unpkg.com/figlet/fonts/' });
+        figlet.preloadFonts(['Standard', 'Slant','Linux','3-D','Block','Computer','Crazy','Doom'], ready);
+
+        var term;
+
+        function ready() {
+            term = $('.terminal').terminal({
+                ben: function (isim) {
+                    this.echo('Merhaba, ' + isim + '. Hoşgeldin');
+                },
+                kurucu: function () {
+                    this.echo('TheYusa');
+                },
+                figlet: function (text, font) {
+  
+                    this.echo(() => render(this, text, font));
+                },
+                yardım: function () {
+                    this.echo('ben - isminizi kullanarak hoşgeldin deyin\n' +
+                        'kurucu - sitenin kurucusunu gösterir\n' +
+                        'figlet - Figlet ile metin render etme\n' +
+                        'yardım - komutları gösterir\n' +
+                        'temizle - ekranı temizler\n'
+                    );
+                },
+                temizle: function () {
+                    this.clear();
+                },
+                iam: function (name) {
+                    this.echo('Hello, ' + name + '. Welcome');
+                },
+                founder: function () {
+                    this.echo('TheYusa');
+                },
+                help: function () {
+                    this.echo('hello - say "Hello" with your name\n' +
+                        'founder - show the founder\n' +
+                        'figlet - render text with Figlet\n' +
+                        'help - show available commands\n' +
+                        'clear - clear the screen'
+                    );
+                },
+                clear: function () {
+                    this.clear();
+                }
+            }, {
+                greetings: '',
+                onInit: function () {
+                    this.echo(() => render(this, 'TheYusa'))
+                },
+                onCommandChange: function(command) {
+                    if (command) {
+                        this.scroll_to_bottom();
+                    }
+                }
+            });
+        }
+
+        function render(term, text, font) {
+            const cols = term.cols();
+            return figlet.textSync(text, {
+                font: font || 'Standard', // Default font
+                width: cols,
+                whitespaceBreak: true
+            });
+        }
+        
+        
+    </script>
 </body>
+
 </html>
