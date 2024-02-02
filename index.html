@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
     <script src="https://unpkg.com/figlet/lib/figlet.js"></script> <!-- Figlet kütüphanesi -->
@@ -64,20 +65,34 @@ canvas {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      height:100%;
+      width: 100%;
       overflow: hidden;
   }
 
   .terminal {
       width: 50%;
-      height: 40%;
-      background-color: #1d2341;
+      height: 50%;
+      background-color: #1e2625;
       border-radius: 5px;
       overflow: hidden auto;
       padding: 10px;
       opacity: 0.8;
-      color: white;
+      border: 1px solid #000; /* Çerçeve rengi ve kalınlığı */
+      
   }
+.terminal::before {
+    content: "terminal"; /* Pseudo element oluşturuldu */
+    padding: 2px;
+    position: absolute; /* Mutlak konumlandırma */
+    top: 0; /* Üst kenara yerleştirme */
+    left: 0; /* Sol kenara yerleştirme */
+    width: 100%; /* Genişlik 100% */
+    height: 15px; /* Çizgi kalınlığı */
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+    
+}
 
   .terminal::-webkit-scrollbar {
       display: none;
@@ -95,10 +110,10 @@ canvas {
 <!-- partial:index.partial.html -->
 <!-- particles.js container -->
 <div id="particles-js">
-
-  
 </div>
+
 <div class="terminal"></div>
+
     <script>
         figlet.defaults({ fontPath: 'https://unpkg.com/figlet/fonts/' });
         figlet.preloadFonts(['Standard', 'Slant','Linux','3-D','Block','Computer'], ready);
@@ -134,7 +149,7 @@ canvas {
                     this.echo('TheYusa');
                 },
                 help: function () {
-                    this.echo('hello - say "Hello" with your name\n' +
+                    this.echo('hello - say "iam" with your name\n' +
                         'founder - show the founder\n' +
                         'figlet - render text with Figlet\n' +
                         'help - show available commands\n' +
