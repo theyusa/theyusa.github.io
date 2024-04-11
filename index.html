@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="main.css" type="text/css">
     <link rel="stylesheet" href="glich.css" type="text/css">
     <link rel="stylesheet" href="./style.css">
-    
 
     <body oncontextmenu="return false">
       
@@ -59,37 +58,50 @@
       }
       
       document.onkeydown = disableCtrlKeyCombination;
-      
     </script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
   </head>
   <body>
+        
+
     <canvas></canvas>
     <div class="container">
       <div class="center">
         <div class="row d-flex flex-wrap align-items-center">
           <div class="col-md-5">
-            <img class="image img-fluid" src="y.png" alt="TheYusa">
+<a href="#" onclick="playMusic()">
+    <img class="image img-fluid" src="y.png" alt="TheYusa">
+</a>
           </div>
           <div class="col-md">
             <h2 id="heading" class="glitch" data-text="TheYusa">TheYusa</h2>
             <p id="red" class="glitch"> #~ Cyber Security </p><br>
             
-            <a class="link1" href="https://www.instagram.com/the.yusa" data-toggle="tooltip" data-placement="bottom" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a class="link1" href="https://www.instagram.com/" data-toggle="tooltip" data-placement="bottom" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
             <a class="link1" href="https://www.linkedin.com/" data-toggle="tooltip" data-placement="bottom" title="Linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a class="link1" href="https://github.com/TheYusa" data-toggle="tooltip" data-placement="bottom" title="Github" target="_blank"><i class="fab fa-github"></i></a>
-            <a class="link1" href="https://www.youtube.com/@TheYusa" data-toggle="tooltip" data-placement="bottom" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a class="link1" href="https://www.youtube.com/" data-toggle="tooltip" data-placement="bottom" title="Youtube" target="_blank"><i class="fab fa-youtube"></i></a>
             <a class="link1" href="https://discord.gg/" data-toggle="tooltip" data-placement="bottom" title="Discord" target="_blank"><i class="fab fa-discord"></i></a>
-            <a class="link1" href="https://theyusa.github.io/terminal.html" data-toggle="tooltip" data-placement="bottom" title="Terminal" target="_blank"><i class="fa-solid fa-terminal"></i></a>
-           
-  <audio id="music" controls autoplay loop>
-
-  <source src="timeback.mp3" type="audio/mpeg">
-
-  <source src="timeback.ogg" type="audio/ogg">
-Tarayıcınız audio elementini desteklemiyor.
-  </audio>
+            <a class="link1" href="terminal.html" data-toggle="tooltip" data-placement="bottom" title="Terminal" target="_blank"><i class="fa-solid fa-terminal"></i></a>
             
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+<audio id="music" autoplay loop>
+  <source src="timeback.mp3" type="audio/mpeg">
+  <source src="timeback.ogg" type="audio/ogg">
+</audio>
+
+<script>
+  document.cookie = "consent=true; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/";
+</script>
+ 
+<script>
+    function playMusic() {
+        var audio = document.getElementById("music");
+        audio.play();
+    }
+</script>
           </div>
         </div>
       </div>
@@ -101,6 +113,7 @@ Tarayıcınız audio elementini desteklemiyor.
     <div id="badge">
       <script src="https://tryhackme.com/badge/2095644"></script>
       <script  src="./script.js"></script>
+      
     </div>
   </body>
 </html>
